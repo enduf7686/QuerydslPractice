@@ -2,7 +2,6 @@ package spring.querydsl;
 
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.Tuple;
-import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.core.types.dsl.CaseBuilder;
@@ -58,6 +57,9 @@ public class QuerydslBasicTest {
         memberRepository.save(new Member("member2", 20, teamA));
         memberRepository.save(new Member("member3", 30, teamB));
         memberRepository.save(new Member("member4", 40, teamB));
+
+        em.flush();
+        em.clear();
     }
 
     @Test
